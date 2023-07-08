@@ -9,7 +9,7 @@ export default function useUpdatePrompt(creatorId: number | null, id: string, fo
     return useMutation({
         mutationFn: async()=>{
             const tags = form.tag.replaceAll(' ','').toLowerCase()
-                const res = await axios.patch(`http://localhost:3000/api/prompt/${id}`,{
+                const res = await axios.patch(`/api/prompt/${id}`,{
                         description:form.description,
                         tag:tags,
                         creatorId:creatorId!

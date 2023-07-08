@@ -6,7 +6,7 @@ export default function useDeletePrompt () {
     const clientQuery = useQueryClient()
     return useMutation({
         mutationFn: async (id: number) => {
-          const {msg} = (await axios.delete(`http://localhost:3000/api/prompt/${id}`)).data
+          const {msg} = (await axios.delete(`/api/prompt/${id}`)).data
           return msg
         },
         onSuccess: (msg: string, vars: number)=> {

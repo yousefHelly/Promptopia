@@ -6,7 +6,7 @@ export default function useProfile(id: string) {
     const {data, isLoading, isError} = useQuery({
         queryKey:['Profile', id],
         queryFn:async()=>{
-          const user = await axios.get(`http://localhost:3000/api/user/${id}`)
+          const user = await axios.get(`/api/user/${id}`)
           const userData: User = user.data
           return userData
         }

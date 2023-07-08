@@ -9,7 +9,7 @@ export default function useCreatePrompt(id: string, form: Prompt){
     return useMutation({
         mutationFn: async ()=>{
         const tags = form.tag.replaceAll(' ','').toLowerCase()
-        const res = await axios.post(`http://localhost:3000/api/prompt/new`,{
+        const res = await axios.post(`/api/prompt/new`,{
             creatorId:id,
             description:form.description,
             tag:tags})

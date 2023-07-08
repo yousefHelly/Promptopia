@@ -6,7 +6,7 @@ export default function usePrompts (searchVal: string) {
         queryKey:['Prompts'],
         queryFn: async ()=>{
             const searchValWithoutHashtag = searchVal.replace('#', '')
-            const res = await axios.get(`http://localhost:3000/api/prompt?search=${searchValWithoutHashtag}`)
+            const res = await axios.get(`/api/prompt?search=${searchValWithoutHashtag}`)
             const  prompts = res.data
             return prompts as Prompt[]
         }
